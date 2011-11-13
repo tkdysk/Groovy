@@ -9,4 +9,4 @@ item = rssFeed.channel.item[0]
 title = item.title[0].value()[0]
 condition = item."yweather:condition"
 
-println "${title} : ${condition.@text[0]}, ${condition.@temp[0]}[Åé]"
+println "${title} : ${condition.@text[0]}, ${condition.@temp[0]}[C]"
