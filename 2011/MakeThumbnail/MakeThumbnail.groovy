@@ -1,6 +1,6 @@
 /**
 * Groovy Version: 1.8.3 JVM: 1.7.0_01
-* groovy MakeThumbnail.groovy
+* groovy -c UTF-8 MakeThumbnail.groovy
 * 
 * thumbnailator - Thumbnailator - a thumbnail generation library for Java - Google Project Hosting
 * http://code.google.com/p/thumbnailator/
