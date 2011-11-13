@@ -1,7 +1,7 @@
 /**
 * thumbnailator - Thumbnailator - a thumbnail generation library for Java - Google Project Hosting
 * http://code.google.com/p/thumbnailator/
-* Thumbnailator-0.3.10.jarを、~/.groovy/lib か <GROOVY_HOME>/lib にコピー
+* "Thumbnailator-0.3.10.jar" > ~/.groovy/lib or <GROOVY_HOME>/lib 
 */
 
 import net.coobird.thumbnailator.Thumbnails
