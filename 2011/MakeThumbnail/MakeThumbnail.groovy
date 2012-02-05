@@ -13,7 +13,10 @@ import net.coobird.thumbnailator.resizers.configurations.Antialiasing
 /** Config */
 File rootDir = new File(".")
 File pictureDir = new File("./pictures")
+if(pictureDir) pictureDir.mkdir()
 File thumbnailDir = new File("./thumbnail")
+if(thumbnailDir) thumbnailDir.mkdir()
+
 
 /** initialize */
 if(!pictureDir.exists()) pictureDir.mkdir()
