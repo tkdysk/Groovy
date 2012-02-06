@@ -9,15 +9,15 @@ import org.xml.sax.SAXException;
 import parser.utils.PropertyListUtils;
 
 public class iTunesLibraryXMLParser {
-	final String MAJOR_VERSION = "Major Version"
-	final String MINOR_VERSION = "Minor Version"
-	final String DATA = "Date"
-	final String APPLICATION_VERSION = "Application Version"
-	final String FEATURES = "Features"
-	final String MUSIC_FOLDER = "Music Folder"
-	final String LIBRARY_PERSISTENT_ID = "Library Persistent ID"
-	final String TRACKS = "Tracks"
-	final String PLAYLISTS = "Playlists"
+	private static final String MAJOR_VERSION = "Major Version"
+	private static final String MINOR_VERSION = "Minor Version"
+	private static final String DATA = "Date"
+	private static final String APPLICATION_VERSION = "Application Version"
+	private static final String FEATURES = "Features"
+	private static final String MUSIC_FOLDER = "Music Folder"
+	private static final String LIBRARY_PERSISTENT_ID = "Library Persistent ID"
+	private static final String TRACKS = "Tracks"
+	private static final String PLAYLISTS = "Playlists"
 
 	private Map content;
 
