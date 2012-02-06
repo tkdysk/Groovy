@@ -9,5 +9,5 @@ new File(filePath).eachLine("ms932") {
 }
 
 rankMap.sort{it.value}.reverseEach {key, value ->
-	println "$key : ${value}‹È"
+	println "$key : ${value}æ›²"
 }
