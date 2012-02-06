@@ -1,0 +1,52 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!DOCTYPE digester-rules PUBLIC
+  "-//Apache Commons //DTD digester-rules XML V1.0//EN"
+  "http://commons.apache.org/digester/dtds/digester-rules-3.0.dtd">
+  
+<digester-rules>
+    <object-create-rule pattern="plist" classname="parser.utils.PropertyList"/>
+    <pattern value="*/key">
+        <call-method-rule methodname="setKey" paramcount="1" paramtypes="java.lang.String"/>
+        <call-param-rule paramnumber='0'/>
+    </pattern>
+    <pattern value="*/string">
+        <call-method-rule methodname="add" paramcount="1" paramtypes="java.lang.String"/>
+        <call-param-rule paramnumber='0'/>
+    </pattern>
+    <pattern value="*/integer">
+        <call-method-rule methodname="add" paramcount="1" paramtypes="java.lang.Integer"/>
+        <call-param-rule paramnumber='0'/>
+    </pattern>
+    <pattern value="*/true">
+        <object-create-rule classname="parser.utils.True"/>
+        <call-method-rule targetoffset="1" methodname="add" paramcount="1"
+            paramtypes="parser.utils.ValueWrapper"/>
+        <call-param-rule paramnumber='0'  from-stack="true"/>
+    </pattern>
+    <pattern value="*/false">
+        <object-create-rule classname="parser.utils.False"/>
+        <call-method-rule targetoffset="1" methodname="add" paramcount="1"
+            paramtypes="parser.utils.ValueWrapper"/>
+        <call-param-rule paramnumber='0'  from-stack="true"/>
+    </pattern>
+    <pattern value="*/date">
+        <object-create-rule classname="parser.utils.Date"/>
+        <call-method-rule targetoffset="1" methodname="add" paramcount="1"
+            paramtypes="parser.utils.ValueWrapper"/>
+        <call-param-rule paramnumber='0' from-stack="true"/>
+        <call-method-rule targetoffset="0" methodname="takeDateString" paramcount="1" paramtypes="java.lang.String"/>
+        <call-param-rule paramnumber='0'/>
+    </pattern>
+    <pattern value="*/dict">
+        <object-create-rule classname="parser.utils.Dict"/>
+        <call-method-rule targetoffset="1" methodname="add" paramcount="1" 
+             paramtypes="parser.utils.ValueWrapper"/>
+        <call-param-rule paramnumber='0'  from-stack="true"/>
+    </pattern>
+    <pattern value="*/array">
+        <object-create-rule classname="parser.utils.Array"/>
+        <call-method-rule targetoffset="1" methodname="add" paramcount="1" 
+             paramtypes="parser.utils.ValueWrapper"/>
+        <call-param-rule paramnumber='0'  from-stack="true"/>
+    </pattern>
+</digester-rules>
