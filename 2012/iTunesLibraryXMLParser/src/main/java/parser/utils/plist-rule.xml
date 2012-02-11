@@ -2,7 +2,7 @@
 <!DOCTYPE digester-rules PUBLIC
   "-//Apache Commons //DTD digester-rules XML V1.0//EN"
   "http://commons.apache.org/digester/dtds/digester-rules-3.0.dtd">
-  
+
 <digester-rules>
     <object-create-rule pattern="plist" classname="parser.utils.PropertyList"/>
     <pattern value="*/key">
@@ -39,13 +39,13 @@
     </pattern>
     <pattern value="*/dict">
         <object-create-rule classname="parser.utils.Dict"/>
-        <call-method-rule targetoffset="1" methodname="add" paramcount="1" 
+        <call-method-rule targetoffset="1" methodname="add" paramcount="1"
              paramtypes="parser.utils.ValueWrapper"/>
         <call-param-rule paramnumber='0'  from-stack="true"/>
     </pattern>
     <pattern value="*/array">
         <object-create-rule classname="parser.utils.Array"/>
-        <call-method-rule targetoffset="1" methodname="add" paramcount="1" 
+        <call-method-rule targetoffset="1" methodname="add" paramcount="1"
              paramtypes="parser.utils.ValueWrapper"/>
         <call-param-rule paramnumber='0'  from-stack="true"/>
     </pattern>
