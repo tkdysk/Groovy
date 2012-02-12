@@ -2,3 +2,4 @@ target
 *.jar
 *.zip
 .DS_Store
+twitter4j.properties
