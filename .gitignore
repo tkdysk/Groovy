@@ -3,3 +3,4 @@ target
 *.zip
 .DS_Store
 twitter4j.properties
+client_secrets.json
