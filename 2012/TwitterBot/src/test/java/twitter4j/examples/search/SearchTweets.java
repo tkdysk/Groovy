@@ -16,16 +16,14 @@
 
 package twitter4j.examples.search;
 
+import java.util.List;
+
 import twitter4j.Query;
 import twitter4j.QueryResult;
 import twitter4j.Tweet;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.URLEntity;
-import twitter4j.conf.Configuration;
-
-import java.util.List;
 
 /**
  * @author Yusuke Yamamoto - yusuke at mac.com

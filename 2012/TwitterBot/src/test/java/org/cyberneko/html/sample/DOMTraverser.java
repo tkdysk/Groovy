@@ -16,7 +16,7 @@ import org.w3c.dom.NodeList;
 */
 public class DOMTraverser {
     public static void main ( String args[] ) throws Exception {
-        DOMTraverser traverser = new DOMTraverser ( "http://d.hatena.ne.jp/nmomose/20120210/tenno" );
+        DOMTraverser traverser = new DOMTraverser ( "http://www.lawson.co.jp/index.html" );
         traverser.traverse();
     }
 	

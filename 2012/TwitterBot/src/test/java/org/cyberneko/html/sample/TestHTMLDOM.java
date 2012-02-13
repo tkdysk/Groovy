@@ -7,7 +7,7 @@ import org.w3c.dom.Node;
 public class TestHTMLDOM {
     public static void main(String[] argv) throws Exception {
     	
-    	String url = "http://d.hatena.ne.jp/nmomose/20120210/tenno";
+    	String url = "http://www.lawson.co.jp/index.html";
     	
         DOMParser parser = new DOMParser();
         //for (int i = 0; i < argv.length; i++) {
