@@ -15,8 +15,7 @@ import bot.curator.common.bean.Service;
 class TwitterCollector extends AbstarctCollector {
 
 
-	List<Item> getItems(){
-		String queryString = "hatena"
+	List<Item> getItems(String queryString){
 
 		Twitter twitter = new TwitterFactory().getInstance()
 		List<Tweet> tweets
@@ -24,7 +23,7 @@ class TwitterCollector extends AbstarctCollector {
 			Query query = new Query()
 			query.setQuery(queryString)
 			query.setLang("ja")
-			query.setResultType(Query.MIXED)
+			query.setResultType(Query.POPULAR)
 			query.setPage(1)
 			query.rpp(1)
 
@@ -39,14 +38,17 @@ class TwitterCollector extends AbstarctCollector {
 
 	private List<Item> tweets2Items(List<Tweet> tweets){
 		List<Item> items = []
-		tweets.each { items << tweet2Item(it) }
+		tweets.each {
+			Item item = tweet2Item(it)
+			if(item) items << item
+		}
 		return items
 	}
 
 
 	private Item tweet2Item(Tweet tweet){
 		if(!tweet) return null
-
+		
 		def item = new Item()
 		item.setService(Service.Twitter)
 		item.setFqdn("twitter.com")

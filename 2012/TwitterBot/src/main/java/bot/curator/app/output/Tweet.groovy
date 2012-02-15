@@ -9,26 +9,31 @@ class Tweet {
 		Item item = result.getItem()
 		String tweet = "["+String.valueOf(item.getService())+"] "
 		tweet += new GoogleUrlShortener().shortener(item.getUrl())
-		
+
 		Map countMap = [:]
 		result.getTags().each {
-			countMap.put(it, 
-				(countMap.containsKey(it)?countMap.get(it):0) +1)
+			countMap.put(it,
+					(countMap.containsKey(it)?countMap.get(it):0) +1)
 		}
-		
+
 		countMap.remove("twitter")
 		countMap.remove("Twitter")
-		
+
 		countMap.sort{it.value}.reverseEach {key, value ->
 			String tag = value+":"+key
 			if(tweet.length()<100){
 				tweet += "  "+tag
 			}
 		}
-		
-		// 書き込みさせない。
+
+
 		println tweet
-		tweet = ""
+
+		println "ｔｗｅｅｔする場合は、「t」を入力してください。"
+		String line = System.in.newReader().readLine()
+		if("t"!=line) {
+			tweet = "" // 書き込みさせない。
+		}
 		return new UpdateStatus().update(tweet)
 	}
 }

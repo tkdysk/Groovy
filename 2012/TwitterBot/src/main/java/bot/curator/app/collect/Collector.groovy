@@ -5,7 +5,7 @@ import bot.curator.common.bean.Item
 import org.cyberneko.html.parsers.DOMParser
 
 interface Collector {
-	List<Item> getItems()
+	List<Item> getItems(String queryString)
 }
 
 

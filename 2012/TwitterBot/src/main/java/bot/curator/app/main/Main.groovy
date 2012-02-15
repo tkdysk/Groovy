@@ -11,13 +11,15 @@ import bot.curator.app.output.Tweet
 class Main {
 
 	static main(args) {
-		Collector collector = new TwitterCollector()
-		List<Item> items = collector.getItems()
-		items.each {
-			//println "---------" //+it.toString()
-			Result result = new KuromojiAnalyzer(it).analyze()
-			new Tweet().tweet(result)
+		def keywords = ["groovy", "java", "android", "music"]
+		keywords.each {
+			Collector collector = new TwitterCollector()
+			List<Item> items = collector.getItems(it)
+			items.each {
+				//println "---------" //+it.toString()
+				Result result = new KuromojiAnalyzer(it).analyze()
+				new Tweet().tweet(result)
+			}
 		}
 	}
-
 }
