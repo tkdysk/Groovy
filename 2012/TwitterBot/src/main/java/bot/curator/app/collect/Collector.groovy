@@ -4,12 +4,18 @@ import bot.curator.common.util.CustomHTMLParser;
 import bot.curator.common.bean.Item
 import org.cyberneko.html.parsers.DOMParser
 
+
+
 interface Collector {
-	List<Item> getItems(String queryString)
+
+	void setQueryString(String queryString)
+	List<Item> getItems()
 }
 
 
 abstract class AbstarctCollector implements Collector {
+	String queryString
+	
 	String addLinkInfo2Data(String defData, List<String> links){
 		String data = defData
 

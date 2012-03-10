@@ -14,8 +14,7 @@ import bot.curator.common.bean.Service;
 
 class TwitterCollector extends AbstarctCollector {
 
-
-	List<Item> getItems(String queryString){
+	List<Item> getItems(){
 
 		Twitter twitter = new TwitterFactory().getInstance()
 		List<Tweet> tweets
